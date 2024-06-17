@@ -1,0 +1,19 @@
+document.addEventListener('DOMContentLoaded', function() {
+	firstBtn.addEventListener('click', () => {// 선택된 버튼에만 .selected 클래스를 추가하고 선택된 버튼에 해당하는 테이블 표시
+        firstBtn.classList.add('selected');
+        secondBtn.classList.remove('selected');
+        thirdBtn.classList.remove('selected');
+        tbCountry.style.display= 'table';
+
+    });
+
+    firstBtn.click()// firstBtn클릭
+    
+    secondBtn.addEventListener('click', () => {
+        firstBtn.classList.remove('selected');
+        secondBtn.classList.add('selected');
+        thirdBtn.classList.remove('selected');
+        tbDate.style.display= 'flex';
+
+    });
+	});

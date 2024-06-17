@@ -1,0 +1,26 @@
+document.addEventListener('DOMContentLoaded', function() {
+	firstBtn.addEventListener('click', () => {// 선택된 버튼에만 .selected 클래스를 추가하고 선택된 버튼에 해당하는 테이블 표시
+        firstBtn.classList.add('selected');
+        secondBtn.classList.remove('selected');
+        tbCountry.style.display= 'table';
+
+    });
+
+    firstBtn.click()// firstBtn클릭
+    
+    secondBtn.addEventListener('click', () => {
+        firstBtn.classList.remove('selected');
+        secondBtn.classList.add('selected');
+        tbDate.style.display= 'flex';
+    });
+    
+    function initMap() {
+    // 지도의 중심 좌표를 설정
+    var myLatLng = {lat: latitudes[0], lng: longitudes[0]};
+    // 지도 생성
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 8 // 줌 레벨을 조정할 수 있습니다.
+        });
+    };
+});

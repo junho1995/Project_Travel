@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* 동그라미 스타일 */
+.circle {
+	width: 80px;
+	height: 80px;
+	background-color: #8080ff; /* 금색 배경색 */
+	border-radius: 50%; /* 동그라미 형태로 만듦 */
+	position: absolute; /* 절대 위치 지정 */
+	cursor: grabbing;
+	top: 10px; /* 초기 세로 위치 설정 */
+	left: 20px; /* 초기 가로 위치 설정 */
+}

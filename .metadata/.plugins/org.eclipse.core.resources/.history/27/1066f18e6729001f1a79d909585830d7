@@ -1,0 +1,35 @@
+document.addEventListener('DOMContentLoaded', function() {
+	
+    function initMap() {
+		    // 지도를 표시할 요소 선택
+    var mapElement = document.getElementById('map');
+    // 모든 도시의 위도와 경도를 포함하는 최적의 경계를 설정하기 위한 변수
+    var bounds = new google.maps.LatLngBounds();
+
+    // 지도 초기화
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6 // 초기 확대 수준 설정
+    });
+
+    // cities 배열 반복하여 각 도시의 위도와 경도에 마커 추가
+    for (var i = 0; i < cities.length; i++) {
+        var city = cities[i];
+        console.log("City Latitude: ", city.latitude, ", City Longitude: ", city.longitude);
+        var cityLatLng = {lat: city.latitude, lng: city.longitude};
+        // 마커 생성 및 지도에 추가
+        var marker = new google.maps.Marker({
+            position: cityLatLng,
+            map: map,
+            title: city.cityName // 마커에 도시 이름 표시
+        });
+
+        // 최적의 경계를 위해 해당 도시의 위치를 bounds 변수에 추가
+        bounds.extend(cityLatLng);
+    }
+
+    // 모든 도시를 포함하는 최적의 경계를 설정하여 지도에 적용
+    map.fitBounds(bounds);
+    }
+    
+    initMap();
+});

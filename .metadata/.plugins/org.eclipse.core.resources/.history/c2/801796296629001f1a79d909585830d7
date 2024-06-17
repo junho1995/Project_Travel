@@ -1,0 +1,26 @@
+document.addEventListener('DOMContentLoaded', function() {
+	
+    function initMap() {
+		    // 지도를 표시할 요소 선택
+    var mapElement = document.getElementById('map');
+
+    // 지도 초기화
+    var map = new google.maps.Map(mapElement, {
+        zoom: 6, // 초기 확대 수준 설정
+        center: {lat: 37.5665, lng: 126.9780} // 초기 중심 위치 설정 (예: 서울)
+    });
+
+    // cities 배열 반복하여 각 도시의 위도와 경도에 마커 추가
+    for (var i = 0; i < cities.length; i++) {
+        var city = cities[i];
+        var cityLatLng = {lat: city.latitude, lng: city.longitude};
+
+        // 마커 생성 및 지도에 추가
+        var marker = new google.maps.Marker({
+            position: cityLatLng,
+            map: map,
+            title: city.cityName // 마커에 도시 이름 표시
+            });
+        };
+    };
+});

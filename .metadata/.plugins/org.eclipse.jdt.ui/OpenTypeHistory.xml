@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=Travel/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;net.daum.service{AddScheduleService.java[AddScheduleService" modifiers="513" timestamp="1717548581465"/>
+    <typeInfo handle="=Travel/C:\/Users\/user\/.gradle\/caches\/modules-2\/files-2.1\/com.oracle.database.jdbc\/ojdbc11\/21.5.0.0\/3e588fed4618a39c7d655bfc1159ecb57fabc217\/ojdbc11-21.5.0.0.jar=/gradle_used_by_scope=/main,test=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/&lt;oracle.jdbc(AdditionalDatabaseMetaData.class[AdditionalDatabaseMetaData" modifiers="1537" timestamp="1716194087644"/>
+    <typeInfo handle="=Travel/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;net.daum.dao{AddScheduleDAO.java[AddScheduleDAO" modifiers="513" timestamp="1717548590929"/>
+    <typeInfo handle="=Travel/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;net.daum.service{PlanService.java[PlanService" modifiers="513" timestamp="1718092929000"/>
+    <typeInfo handle="=Travel/C:\/Users\/user\/.gradle\/caches\/modules-2\/files-2.1\/org.springframework.data\/spring-data-jpa\/2.7.5\/dc0bb497a33fcd3f82fe0ccfd674476d93889b3d\/spring-data-jpa-2.7.5.jar=/gradle_used_by_scope=/main,test=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1716194087641"/>
+</typeInfoHistroy>

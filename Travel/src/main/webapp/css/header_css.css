@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+html, body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	background-position: center;
+	width: 1903px;
+}
+
+.navbar {
+	display: flex;
+	align-items: center; /* 세로 가운데 정렬 */
+	background-color: white; /* 배경색 지정 */
+	height: 110px; /* 높이 지정 */
+	width: 1903px;
+}
+
+hr {
+	width: 1900px;
+}
+
+.navbar li {
+	position: relative;
+	left: 20%;
+	margin-left: 5%;
+	margin-top: 1%;
+	list-style-type: none; /* 목록 기호 제거 */
+}
+
+.navbar li a {
+	text-decoration: none; /* 링크 밑줄 제거 */
+	color: #333; /* 링크 색상 */
+	font-weight: bolder; /* 폰트 굵기 */
+	font-size: 30px;
+}
+
+.navbar li a:hover {
+	color: #4174D9; /* 호버 시 링크 색상 변경 */
+}
+
+/* 로고 링크 스타일 */
+.logo-link img {
+	width: 80px; /* 로고 이미지의 너비 조정 */
+	height: auto; /* 로고 이미지의 높이를 자동으로 조절하여 비율 유지 */
+}
+
+/* 로고 링크 컨테이너 스타일 */
+.logo-link {
+	position: relative;
+	top: 0;
+	left: 10%;
+}
+
+/* 오른쪽 상단 Login 버튼 스타일 */
+.login-button {
+	position: relative;
+	top: 10%;
+	left: 40%;
+	z-index: 9999;
+	font-size: 30px; /* 버튼 크기 조절 */
+	font-weight: bolder; /* 버튼 굵기 조절 */
+}
+
+/* 모달 스타일 */
+.modal {
+	display: none; /* 기본적으로 모달은 숨김 */
+	position: fixed; /* 페이지 내에서 고정된 위치 */
+	z-index: 9999; /* 다른 요소들보다 위에 표시되도록 함 */
+	left: 0;
+	top: 0;
+	width: 100%; /* 화면 전체 너비 */
+	height: 100%; /* 화면 전체 높이 */
+	overflow: auto; /* 모달 내용이 넘칠 경우 스크롤바 표시 */
+	background-color: rgba(0, 0, 0, 0.7); /* 배경 투명도 조절 */
+}
+
+/* 모달 내용 스타일 */
+.modal-content {
+	background-color: #fafafa; /* 모달 내용 배경색 */
+	margin: 10% auto; /* 모달을 화면 정중앙에 위치시킴 */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%; /* 모달 내용의 너비 */
+	max-width: 400px; /* 모달 내용의 최대 너비 */
+	border-radius: 10px; /* 모달 모서리를 둥글게 만듦 */
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* 로그인 폼 스타일 */
+.login-form {
+	text-align: center;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+	width: calc(100% - 40px);
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.login-form input[type="submit"] {
+	width: calc(100% - 40px);
+	padding: 10px;
+	background-color: #4174D9;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+	background-color: #4174D9;
+}
+
+/* 회원가입 폼 스타일 */
+.signup-form {
+	text-align: center;
+}
+
+.signup-form h2 {
+	margin-bottom: 20px;
+}
+
+.signup-form input[type="text"], .signup-form input[type="email"],
+	.signup-form input[type="password"], .signup-form input[type="submit"],
+	.signup-form input[type="tel"] {
+	width: calc(100% - 40px);
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.signup-form input[type="submit"] {
+	background-color: #4174D9;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.signup-form input[type="submit"]:hover {
+	background-color: #4174D9;
+}

@@ -1,0 +1,6 @@
+package net.daum.controller;
+
+@Controller
+public class Itinerary {
+
+}

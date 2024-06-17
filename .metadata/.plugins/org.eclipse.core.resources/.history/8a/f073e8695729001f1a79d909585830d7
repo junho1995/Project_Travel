@@ -1,0 +1,5 @@
+package net.daum.DTO;
+
+public class ItineraryDTO {
+
+}

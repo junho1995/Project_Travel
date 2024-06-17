@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* 동영상 컨테이너 스타일 설정 */
+.video-container {
+	position: fixed; /* 페이지 내에서 고정 위치 설정 */
+	top: 0; /* 화면 상단에 위치 */
+	left: 0; /* 화면 좌측에 위치 */
+	width: 100%; /* 화면 전체 너비로 설정 */
+	height: 100%; /* 화면 전체 높이로 설정 */
+	z-index: -1; /* 동영상을 페이지 내의 다른 요소보다 뒤에 위치하도록 설정 */
+}
+
+/* 동영상 스타일 설정 */
+.video-container video {
+	width: 100%; /* 동영상의 너비를 화면 전체 너비로 설정 */
+	height: 100%; /* 동영상의 높이를 화면 전체 높이로 설정 */
+	object-fit: cover; /* 동영상이 컨테이너에 꽉 차도록 설정 */
+}
+
+/* 내용 스타일 설정 */
+.content {
+	position: relative;
+	z-index: 2; /* 동영상 위에 나타나도록 설정 */
+	/*height: 100%;*/
+	margin-bottom: 800px; /* footer의 높이만큼의 여백 추가 */
+}
+
+/* 검색창 및 다른 UI 요소 스타일 설정 */
+.search-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+/* 검색창 및 버튼 그룹 스타일 설정 */
+.search-container {
+	display: flex; /* 내부 요소를 가로로 정렬 */
+	justify-content: center; /* 수평 가운데 정렬 */
+	position: relative; /* 페이지 중앙에 고정 */
+	top: 300px; /* 페이지 상단에서 50% 지점에 위치 */
+	left: 50%; /* 페이지 좌측에서 50% 지점에 위치 */
+	transform: translate(-50%, -50%); /* 수직 및 수평 가운데 정렬 */
+	width: 400px; /* 검색창 가로 크기 설정 */
+}
+
+/* 검색창 스타일 설정 */
+.search-bar {
+	padding: 15px;
+	font-size: 16px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	color: black;
+	flex: 1; /* 검색창이 남은 공간을 모두 차지하도록 함 */
+}
+
+/* 검색창에 마우스를 올렸을 때 배경색 변경 */
+.search-bar:hover {
+	background-color: #ccc; /* 마우스를 올렸을 때 배경색을 그레이로 변경 */
+	border-color: #4174d9;
+}
+
+/* 검색 버튼 스타일 설정 */
+.search-button {
+	padding: 15px;
+	border: none;
+	background-color: transparent;
+	border-radius: 5px;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	text-shadow: 2px 2px 2px black;
+	position: absolute; /* 절대 위치 설정 */
+	right: 0; /* 우측 정렬 */
+	top: 50%; /* 상단 정렬 */
+	transform: translateY(-50%); /* 수직 가운데 정렬 */
+}

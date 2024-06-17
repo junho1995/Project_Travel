@@ -1,0 +1,17 @@
+package net.daum.DTO;
+
+import java.sql.Date;
+import java.util.List;
+
+import net.daum.vo.CityVO;
+
+public class ItineraryDTO {
+	private String nationalCode;
+    private Date departureDate;
+    private Date arrivalDate;
+    private String nationalName;
+    private String timeDifference;
+    private String flagPath;
+    private List<CityVO> selectedCities; // CityVO 객체를 저장하는 리스트
+
+}
