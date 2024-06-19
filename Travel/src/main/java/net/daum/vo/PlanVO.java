@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -54,4 +56,8 @@ public class PlanVO {
 	@CreationTimestamp// 하이버네이트로 등록시점 날짜값 생성
 	@Column(name= "plan_date", nullable = false)
     private Timestamp planDate;// 일정생성날짜
+	
+	@ManyToOne
+    @JoinColumn(name = "member_id")
+    private MemberVO memberVO;
 }

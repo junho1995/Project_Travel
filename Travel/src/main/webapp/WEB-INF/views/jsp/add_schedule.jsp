@@ -9,6 +9,7 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
 	<p id="schedule_p">Schedule</p>
 		<%-- 버튼 박스 --%>
 		<div class="button_box">

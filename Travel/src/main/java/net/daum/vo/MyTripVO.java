@@ -1,5 +1,5 @@
-package net.daum.vo;
-
-public class MyTripVO {
-
-}
+//package net.daum.vo;
+//
+//public class MyTripVO {
+//
+//}

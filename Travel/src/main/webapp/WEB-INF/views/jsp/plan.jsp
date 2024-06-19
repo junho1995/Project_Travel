@@ -22,6 +22,9 @@
     var longitudes = ${capitalCityLongitudes};
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+var nationalCode = "${nationalCode}";
+</script>
 </head>
 <body>
 
@@ -34,7 +37,7 @@
     <div class="wrapper">
         <div id= "travelModal" class="t_modal">
             <div class="modal_content">
-            ${nationalName}행 일정이 생성 되었습니다.
+            나의 일정이 생성 되었습니다.
             </div>
             <i class="fa-solid fa-plane fa-2xl"></i>
             <div class="airlineTickets">
@@ -45,6 +48,7 @@
             </div>
             <p>항공권 예매하기</p>
             <form id="travelForm" action="/itinerary/" method="POST">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             <input type="hidden" id="departureDateInput" name="departureDate">
             <input type="hidden" id="arrivalDateInput" name="arrivalDate">
             <input type="hidden" id="destinationInput" name="selectedCityCodes">
@@ -76,56 +80,50 @@
 
 			
             <ul class="tab_menu2">
-<table class="tb_country">
+<div class="country_main">
+    <div class="country_item">
+        <div class="country_img"><img src="../../..${flagPath}" alt="${nationalName}"></div>
 
-        <td class="country_img"><img src="../../..${flagPath}" alt="${nationalName}"></td>
-    
-
-        <td class="country_name">&nbsp; &nbsp;${nationalName}</td>
-
-    <tr>
-        <td class="country_time">시차 &nbsp;${timeDifference}</td>
-    </tr>
-</table>
+        <div class="country_name">&nbsp; &nbsp;${nationalName}</div>
+    </div>
+        <div class="country_time">시차 &nbsp;${timeDifference}</div>
+</div>
                 
-            <div class="C_container">
-                
+            <div class="c_container">
                 <div class="select_date"> 일정을 선택해 주세요</div>
-                
-                <div class="calendar-container">
-                    <div class="calendar-header">
-                        <button id="prevBtn">
-                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
-                        </button>
-                        
-                    <h2 id="currentMonth"></h2>
-                        <button id="nextBtn">
-                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
-                        </button>
-                    </div>
+                    <div class="calendar_container">
                     
-                    <div class="calendar-days">
-                        <div class="day1">일</div>
-                        <div class="day">월</div>
-                        <div class="day">화</div>
-                        <div class="day">수</div>
-                        <div class="day">목</div>
-                        <div class="day">금</div>
-                        <div class="day2">토</div>
-                    </div>
-                    <div class="calendar-dates" id="calendarDates"></div>
+                        <div class="calendar_header">
+                            <button id="prevBtn">
+                                <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                            </button>
+                        <h2 id="currentMonth"></h2>
+                            <button id="nextBtn">
+                                <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                            </button>
+                        </div>
+                    
+                        <div class="calendar_days">
+                            <div class="day1">일</div>
+                            <div class="day">월</div>
+                            <div class="day">화</div>
+                            <div class="day">수</div>
+                            <div class="day">목</div>
+                            <div class="day">금</div>
+                            <div class="day2">토</div>
+                        </div>
+                    
+                        <div class="calendar_dates" id="calendarDates"></div>
                         <div id="selectedDates" >
                         </div>
-                </div>
+                    </div>
             </div>
             
-                <table class="tb_city">
+                <table class="city_main">
                     <tr>
                         <th class="c_name">${nationalName}</th>
                     </tr>
-                    <tr>
-                        <input type="text" id="placeSearch" placeholder="장소 검색" />
-                    </tr>
+
                     <tr>
                         <td>
                             <ul id="city_list" class="city_list">
@@ -133,10 +131,6 @@
                             <c:forEach var="C" items="${cityList}" varStatus="loop">
                             <li class="city_item_${C.cityCode}">
                                 <div class="city_name">${C.cityName}</div>
-
-                                <div class="city_info">
-                                   "${C.cityInfo}"
-                                </div>
                                 <div class="container_c">
                                     <button id= "select_city${C.cityCode}" class="select_city" data-longitude="${C.longitude}" data-latitude="${C.latitude}" data-index="${loop.index}" data-cityCode="${C.cityCode}" data-cityName="${C.cityName}">+</button>
                                 </div>
@@ -145,6 +139,11 @@
 			                </ul>
 			            </td>
                     </tr>
+                    <tr>
+                    <td>
+                        <input type="text" id="placeSearch" placeholder="장소 검색" />
+                    </td>
+                    </tr>
                 </table>
             </ul>
         </div>
@@ -152,8 +151,8 @@
 	</div>
 	
 	<%-- 외부 javascript 파일 연결 --%>
-    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ4RyCuYJe7JbBpsNsi3_CUlpNlsKxOe8&libraries=places"></script>
+    
 	<script 
 	    src="https://kit.fontawesome.com/9d75e77952.js"crossorigin="anonymous">
 	</script>
