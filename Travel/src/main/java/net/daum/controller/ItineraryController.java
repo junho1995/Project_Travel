@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.daum.service.MemberService;
 import net.daum.service.PlanService;
 import net.daum.vo.CityVO;
 import net.daum.vo.DestinationVO;
+import net.daum.vo.MemberVO;
 import net.daum.vo.NationalVO;
 import net.daum.vo.PlanVO;
 
@@ -24,18 +28,31 @@ public class ItineraryController {
 	@Autowired
     private PlanService planservice;
 	
+	@Autowired
+	private MemberService memberService;
+	
 	@PostMapping("/itinerary/{nationalCode}")
 	@ResponseBody
 	public ModelAndView itinerary(@PathVariable String nationalCode,
+			                      @AuthenticationPrincipal UserDetails userDetails,
                                   @RequestParam("departureDate") Date departureDate,
                                   @RequestParam("arrivalDate") Date arrivalDate,
-                                  @RequestParam("selectedCityCodes") List<String> selectedCityCodes) {
+                                  @RequestParam("selectedCityCodes") List<String> selectedCityCodes,
+	                              @RequestParam("placeLatitude") double placeLatitude,
+	                              @RequestParam("placeLongitude") double placeLongitude,
+	                              @RequestParam("placeName") String placeName)
+	                              {
         
 		NationalVO nv= this.planservice.findNational(nationalCode);// 국가코드로 국가정보를 NationalVO에서 find
         PlanVO p= new PlanVO();// planVO에 저장하기 위한 planVO p 객체 생성?
+        String username=userDetails.getUsername();
+        MemberVO m= this.memberService.idCheck(username);
+        
         p.setArrivalDate(arrivalDate);
         p.setDepartureDate(departureDate);
-        this.planservice.insertPlan(p);// 일정 저장 및 생성
+        p.setMemberVO(m);
+        
+        this.planservice.insertPlan(p);// 일정 저장
         
         ModelAndView mv= new ModelAndView();// modelAndView 객체 생성
         mv.setViewName("/jsp/itinerary");// 뷰페이지 설정
@@ -49,6 +66,9 @@ public class ItineraryController {
         	    d.setPlan(p);
         	    // 일정번호 설정
         	    d.setCity(c);
+        	    d.setPlaceLatitude(placeLatitude);
+        	    d.setPlaceLongitude(placeLongitude);
+        	    d.setPlaceName(placeName);
         	    this.planservice.insertDestination(d);
         	}
         }
