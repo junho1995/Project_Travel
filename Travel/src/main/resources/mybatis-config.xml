@@ -5,12 +5,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 
 <configuration>
-   <!-- 데이터 저장빈 클래스 객체 별칭이름을 관리해 주는 파일이다. -->
-   
-   <settings>
-     <setting name="jdbcTypeForNull" value="NULL"/> <!-- mybatis 프레임웍으로 레코드 저장시 null이 
-     저장안된다.이것을 저장되게 허용해 주는 부분이다. -->     
-   </settings>
-   
+	<!-- 데이터 저장빈 클래스 객체 별칭이름을 관리해 주는 파일이다. -->
 
+	<typeAliases>
+		<typeAlias type="net.daum.vo.Community_boardVO" alias="cm_board" />
+
+	</typeAliases>
 </configuration>

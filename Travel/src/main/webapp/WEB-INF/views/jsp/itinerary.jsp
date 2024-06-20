@@ -26,6 +26,7 @@
     	}<c:if test="${not loop.last}">,</c:if>
     	</c:forEach>
     	];
+    console.log(latitude);
 </script>
 
 </head>
