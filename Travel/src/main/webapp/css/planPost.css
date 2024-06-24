@@ -36,28 +36,44 @@ p{
 
 .post{
 	border-right: 3px solid #4174d9;
-	border-bottom: 3px solid #4174d9; 
-    padding: 0px;
+	border-left: 3px solid #4174d9; 
+    padding-left: 5px;
     box-sizing: border-box;
     border-radius: 15px;
     position: relative;
+    display:flex;
+    gap: 5px;
+    height: 210px;
+    align-items: center;
 }
 
 #my_trip_p{
     font-size: 20px;
     font-weight: bold;
-    margin-left: 950px;
-    margin-top:-400px;
-    color: white;
+    margin-left: 900px;
+    margin-top: -400px;
+    color: black;
 }
 
+.citylist{
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 200px;
+    width: -webkit-fill-available;	
+}
 .dates {
     text-align: right; /* 날짜들을 오른쪽 정렬 */
-    margin-top: 10px; /* 위쪽 여백 설정 */
     margin-right: 15px;
 }
 
-.city-list {
-    padding-left: 0; /* 리스트 좌측 여백 제거 */
-    list-style-type: none; /* 리스트 마커 제거 */
+.nationalName {
+    font-weight: bold;
+}
+
+.cityImage{
+	height:200px;
+}
+.cityImage>img {
+	border-radius: 10px;
 }

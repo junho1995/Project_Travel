@@ -1,31 +1,10 @@
 @charset "UTF-8";
 
-/* 기본 스타일 */
-.container {
-	display: flex;
-	justify-content: right;
-	align-items: center;
-	margin-top: 100px;
+/* heart.ui */
+#btn-like>i {
+    font-size: 25px;
 }
 
-.post {
-	border: 1px solid #ccc;
-	padding: 20px;
-	text-align: center;
-}
-
-.like-btn {
-	background-color: #007bff;
-	color: #fff;
-	border: none;
-	padding: 5px 10px;
-	cursor: pointer;
-}
-
-.like-btn.liked {
-	background-color: #dc3545;
-}
-
-.like-count {
-	margin-left: 10px;
+.bi-heart-fill,.bi-heart {
+     color: red;
 }
