@@ -22,4 +22,8 @@ public interface PlanService {
 
 	List<PlanVO> allUserPlan();
 
+	PlanVO getPlan(int planNo);
+
+	void deletePlanByPlanNo(int planNo);
+
 }

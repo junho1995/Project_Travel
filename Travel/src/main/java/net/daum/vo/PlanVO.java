@@ -62,11 +62,11 @@ public class PlanVO {
 	@Column(name= "plan_date", nullable = false)
     private Timestamp planDate;// 일정생성날짜
 	
-	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private MemberVO memberVO;
 	
-	   @ManyToMany
+	   @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	   @JoinTable(
 	         name= "plan_city",
 	         joinColumns= @JoinColumn(name= "plan_no"),

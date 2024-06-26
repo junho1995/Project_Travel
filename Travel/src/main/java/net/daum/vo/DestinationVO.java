@@ -1,5 +1,6 @@
 package net.daum.vo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.springframework.data.repository.query.parser.Part.Type;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -32,7 +35,7 @@ public class DestinationVO {
 	@Column(name= "Destination_no", nullable = false)
 	private int destinationNo;// 일정번호
 	
-	@ManyToOne(fetch= FetchType.LAZY)
+	@ManyToOne(fetch= FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name= "plan_no", referencedColumnName= "plan_no")
 	private PlanVO plan;
 	

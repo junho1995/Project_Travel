@@ -34,7 +34,6 @@ var btn4 = document.getElementById("btn_4");
 $(document).ready(function(){
     $('.viewPlanBtn').click(function(){
         let planData = $(this).data('plan-no');
-        
         $.ajax({
             type: 'GET',
             url: '/itinerary/',

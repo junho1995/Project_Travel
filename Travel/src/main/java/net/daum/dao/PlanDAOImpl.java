@@ -4,6 +4,8 @@ package net.daum.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -52,4 +54,20 @@ public class PlanDAOImpl implements PlanDAO {
 		return this.planRepo.allUserPlan();
 	}
 
+	@Override
+	public PlanVO getPlan(int planNo) {
+		return this.planRepo.findById(planNo).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public void deletePlanByPlanNo(int planNo) {
+        PlanVO plan = this.planRepo.findById(planNo).orElse(null);
+        System.out.println(plan);
+        if (plan != null) {
+            // cities 리스트에서 모든 CityVO를 제거
+            plan.getCities().clear();
+        }
+        this.planRepo.deleteByplanNo(planNo);
+	}
 }
