@@ -12,11 +12,5 @@
 ![권한](https://github.com/JinhaakM/travel_backend/assets/167280525/35380e0f-9933-4792-bf82-b31123e252d1)
 
 <br><br>
-
-<h2>관리자와 실시간으로 채팅을 주고 받을 수 있다</h2>
-
-![채팅](https://github.com/JinhaakM/travel_backend/assets/167280525/90a5cd9d-d06a-4b21-8851-ed325ed8523b)
-
-<br><br>
 0626/프로젝트 종료
 
