@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=rect&color=4174d9&height=40&width=400section=header&text=TravelProject&fontSize=30&fontColor=d6ace6" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=4174d9&height=40&width=400&section=header&text=TravelProject&fontSize=30&fontColor=d6ace6" />
 
 <br>
 <h2>홈페이지</h2>
