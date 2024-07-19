@@ -12,5 +12,11 @@
 ![권한](https://github.com/JinhaakM/travel_backend/assets/167280525/35380e0f-9933-4792-bf82-b31123e252d1)
 
 <br><br>
+
+<h2> 여행일정과 관련된 부분들 </h2>
+
+![여행일정]![일정1](https://github.com/user-attachments/assets/f4e9c378-eb5b-4c52-98dc-3dc614c36635)
+
+<br><br>
 0626/프로젝트 종료
 
