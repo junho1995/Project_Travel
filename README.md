@@ -15,5 +15,6 @@
 ![일정4](https://github.com/user-attachments/assets/cbe0dc13-57ea-43e7-96a1-e29f61f987e3)
 
 <br><br>
-0626/프로젝트 종료
+지도 api 관련 key값 및 위도 경도 값 수정
+포트원 결제 관련 webhook주소 변경
 
