@@ -5,7 +5,7 @@ select * from destination;
 select * from PLAN_CITY;
 select * from MEMBER;
 
-drop table plan;
+drop table national CASCADE CONSTRAINTS;
 drop table city;
 drop table destination;
 drop table plan_city;

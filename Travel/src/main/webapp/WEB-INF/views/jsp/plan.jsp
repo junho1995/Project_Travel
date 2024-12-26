@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../css/plan.css">
 <link rel="stylesheet" type="text/css" href="../css/plancalendar.css">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script>
     var latitudes = ${capitalCityLatitudes};
@@ -151,12 +151,13 @@ var nationalCode = "${nationalCode}";
 	</div>
 	
 	<%-- 외부 javascript 파일 연결 --%>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ4RyCuYJe7JbBpsNsi3_CUlpNlsKxOe8&libraries=places"></script>
-    
+	<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
 	<script 
 	    src="https://kit.fontawesome.com/9d75e77952.js"crossorigin="anonymous">
 	</script>
+
 	<script src="../js/planDestination.js"></script>
+	<script src="../js/plan.js"></script>
 	<script src="../js/planCalendar.js"></script>
 </body>
 </html>

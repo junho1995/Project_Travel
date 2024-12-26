@@ -88,11 +88,11 @@ var planNo= "${planNo}"
 	</div>
 	
 	<%-- 외부 javascript 파일 연결 --%>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ4RyCuYJe7JbBpsNsi3_CUlpNlsKxOe8&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
     
 	<script 
 	    src="https://kit.fontawesome.com/9d75e77952.js"crossorigin="anonymous">
 	</script>
-	<script src="../js/itinerary.js"></script>
+	<script src="../../js/itinerary.js"></script>
 </body>
 </html>

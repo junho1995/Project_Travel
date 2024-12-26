@@ -26,29 +26,29 @@ public class ImportApiController {
     private IamportClient api;
 
     public ImportApiController(@Value("${iamport.api.key}") String apiKey, @Value("${iamport.api.secret}") String apiSecret) {
-    	
-    		    this.api = new IamportClient(apiKey, apiSecret);
-    			//System.out.println("API Key: " + apiKey);
-    			//System.out.println("API Secret: " + apiSecret);
+   
+       this.api = new IamportClient(apiKey, apiSecret);
+    //System.out.println("API Key: " + apiKey);
+    //System.out.println("API Secret: " + apiSecret);
     }
 
     @PostMapping("/webendpoint")
     @ResponseBody
     public String handleWebhook(@RequestBody MyPayment payload) {
         // 웹훅 수신 처리-가능한지만
-    	// ngrok를 통해 통신한다.
-    	// 포트원이 보내는 형식 {"imp_uid":"imp_614505216799","merchant_uid":"IMPtz60b24qh0elxd3320p","status":"paid"}
-    	
-    	
-    	System.out.println(payload.getimp_uid());
-    	System.out.println(payload.getmerchant_uid());
-    	System.out.println(payload.getStatus());
-    	
+    // ngrok를 통해 통신한다.
+    // 포트원이 보내는 형식 {"imp_uid":"imp_614505216799","merchant_uid":"IMPtz60b24qh0elxd3320p","status":"paid"}
+   
+   
+    System.out.println(payload.getimp_uid());
+    System.out.println(payload.getmerchant_uid());
+    System.out.println(payload.getStatus());
+   
         System.out.println("웹훅 수신이 정상적으로 완료됨");
         return null;
     }
  
-    
+   
     // 결제 금액을 계산하여 반환하는 API
     @GetMapping("/getPaymentAmount")
     @ResponseBody
@@ -68,7 +68,7 @@ public class ImportApiController {
         //System.out.println("Received amount from client: " + amount);
 
         IamportResponse<Payment> response = api.paymentByImpUid(imp_uid);
-        
+       
         Payment payment = response.getResponse();
         if (payment == null) {
             Map<String, String> errorResult = new HashMap<>();

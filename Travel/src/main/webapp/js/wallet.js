@@ -1,5 +1,5 @@
 var IMP = window.IMP;
-IMP.init("imp87501644");
+IMP.init("imp03808101");
 
 function requestPay() {
   var random_uid = Math.random().toString(36).substring(2) + (new Date()).getTime().toString(36);
@@ -15,7 +15,7 @@ function requestPay() {
       IMP.request_pay({
         pg: "kakaopay.TC0ONETIME",
         pay_method: "kakaopay",
-        notice_url: "https://ba42-112-221-198-149.ngrok-free.app/webendpoint", //웹훅수신 URL 설정 ngrok에서 부여받은 url을 이용해야 한다. 포트원 설정도 함께 해줘야 한다.
+        notice_url: "https://e765-119-193-42-2.ngrok-free.app/webendpoint", //웹훅수신 URL 설정 ngrok에서 부여받은 url을 이용해야 한다. 포트원 설정도 함께 해줘야 한다.
         merchant_uid: "IMP" + random_uid,
         name: "travel 구독",
         amount: amount,

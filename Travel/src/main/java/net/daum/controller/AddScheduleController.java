@@ -50,14 +50,14 @@ public class AddScheduleController {
 
 		if(m.getRole().equals("NOPAIDUSER")) {
 			out.println("<script>");
-			out.println("alert('결제하셔야 해용! ㅋ');");	
+			out.println("alert('결제하셔야 해용! ㅋ');");
 			out.println("window.location.href = '/homepage';");
 			out.println("</script>");
 			
 			return null;
 		}else {
 			List<NationalVO> nList= this.addscheduleservice.findNname();
-
+			System.out.println(nList);
 			model.addAttribute("Nlist", nList);
 			return "jsp/add_schedule";
 		}
